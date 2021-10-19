@@ -1,0 +1,183 @@
+
+<html> 
+   <head> 
+      <script> 
+        function dis(val){ 
+             document.getElementById("result").value+=val 
+         }
+         function solve(){ 
+             try {
+    let x = document.getElementById("result").value 
+             let y = eval(x) 
+             document.getElementById("result").value = y
+}
+catch(err){
+    alert("Please enter valid expression");
+    document.getElementById("result").value = "";
+}
+
+         } 
+         function clr(){ 
+             document.getElementById("result").value = "" 
+}
+
+      </script> 
+
+      
+
+      <style> 
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+                
+}
+
+.eq{
+                background-color: #7a00ff;
+                color: white;
+}
+
+#result{
+                 outline:none;
+            border:none;
+            box-shadow:0 0 1vmin 1vmin #0003;
+            color:#ff5f55;
+            
+}
+tr{
+                border: solid rgb(252, 2, 177) 0px;
+}
+td{
+                border: solid rgb(252, 2, 177) 0px; 
+}
+main{
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    background: #282828;
+    display: grid;
+    place-items: center;
+}
+.title{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+table{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #282828;
+    padding: 0px;
+    outline: none;
+    border: none;
+    margin: 0%;
+    border-radius: 20%;
+}
+input{
+    padding: 10px 25px;
+    outline: none;
+    border: none;
+    background: #282828;
+    color: white;
+    font-size: 1.5rem;
+}
+input[type="button"]{ 
+    border: none; 
+    width:100%;
+    height: 60px;
+    font-size: 1.5rem;
+    transition: all .25s;
+    background: ;
+    box-shadow:0 0 1vmin 1vmin #0003;
+}
+.result{ 
+    background:#282828; 
+    outline:none;
+    width:100%; 
+    float:center;
+    position: relative;
+    font-size: 2rem;
+    border-bottom:solid white 0.5px;
+}
+.result input{
+    width: 98%;
+    height: 90%;
+    padding: 5px 5px;
+    position: absolute;
+    border-bottom:solid black 1px;
+    outline:none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+}
+input[type="button"]:active{
+    background: rgb(18, 18, 18, 0.5);
+    color: white;
+}
+.title{
+    position: absolute;
+    top: 18%;
+    left: 50%;
+    transform: translate(-50%, -90%);
+    font-size: 2.8rem;
+    font-weight: 900;
+    width: 100%;
+    text-align: center;
+    background: -webkit-linear-gradient(135deg, white ,    #474747 );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.clr{
+                color:#ff0088;
+}
+    </style> 
+
+   </head> 
+
+   <body> 
+    <main>
+      <div class = title >Simple Calculator</div> 
+      <table border="1"> 
+         <tr> 
+            <td class="result" colspan="3"><input type="text" id="result" disabled="true"></td>           
+            <td><input type="button" class="clr" value="c " onclick="clr()"/> </td> 
+         </tr> 
+         <tr>
+            <td><input type="button" value="1 " onclick="dis('1')"/> </td> 
+            <td><input type="button" value="2" onclick="dis('2')"/> </td> 
+            <td><input type="button" value="3" onclick="dis('3')"/> </td> 
+            <td><input type="button" value=" / " onclick="dis('/')"/> </td> 
+         </tr> 
+         <tr> 
+            <td><input type="button" value="4 " onclick="dis('4')"/> </td> 
+            <td><input type="button" value="5" onclick="dis('5')"/> </td> 
+            <td><input type="button" value="6" onclick="dis('6')"/> </td> 
+            <td><input type="button" value=" - " onclick="dis('-')"/> </td> 
+         </tr> 
+         <tr> 
+            <td><input type="button" value="7 " onclick="dis('7')"/> </td> 
+            <td><input type="button" value="8" onclick="dis('8')"/> </td> 
+            <td><input type="button" value="9" onclick="dis('9')"/> </td> 
+            <td><input type="button" value="+ " onclick="dis('+')"/> </td> 
+         </tr> 
+         <tr> 
+            <td><input type="button" value="  ." onclick="dis('.')"/> </td> 
+            <td><input type="button" value="0" onclick="dis('0')"/> </td>         
+            <td><input type="button" value="=" class="eq" onclick="solve()"/> </td> 
+           <td><input type="button" class="mlti" value="×" onclick="dis('*')"/> </td> 
+</tr> 
+
+      </table> 
+</main>
+   </body> 
+
+</html>
